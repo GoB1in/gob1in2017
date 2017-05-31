@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pattaya|Ruslan+Display&amp;subset=cyrillic">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Ruslan Display', cursive;}
+.menu {display: none}
+.bgimg {
+    background-repeat: repeat;
+    background-size: auto;
+    background-image: url("hohloma.jpg");
+    min-height: 100%;
+}
+.w3-text-grey {font-family: 'Pattaya', sans-serif;}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button">HOME</a>
+    <a href="#menu" class="w3-bar-item w3-button">MENU</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#googleMap" class="w3-bar-item w3-button">CONTACT</a>
+  </div>
+</div>
+  
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+
+  <div class="w3-display-bottomleft w3-padding">
+    <span class="w3-tag w3-xlarge">Open 11AM 6PM</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white w3-hide-small" style="font-size:40px">кафе<br>Русские блины</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>кафе<br>Русские блины</b></span>
+
+	<div class="slideshow-container">
+
+		<div class="mySlides fade">
+		  <div class="numbertext">1 / 3</div>
+		  <img src="IMG/blin.jpg" style="width:100%">
+		  <div class="text">Блины с красной икрой и маслом</div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">2 / 3</div>
+		  <img src="IMG/blin1.jpg" style="width:100%">
+		  <div class="text">Блины со сметаной</div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">3 / 3</div>
+		  <img src="IMG/blin2.jpg" style="width:100%">
+		  <div class="text">Блины со сгущеным молоком</div>
+		</div>
+
+	  </div>
+	<br>
+
+	  <div style="text-align:center">
+		<span class="dot"></span> 
+		<span class="dot"></span> 
+		<span class="dot"></span> 
+	  </div>
+	
+  </div>
+  <div class="w3-display-bottomright w3-padding">
+    <span class="w3-tag w3-xlarge"><a href="pizza.html">Ru</a></span>
+    <span class="w3-tag w3-xlarge">En</span>
+	<span class="w3-tag w3-xlarge"><a href="pizzafr.html">Fr</a></span>
+    <span class="w3-tag w3-xlarge"><a href="pizzade.html">De</a></span>
+	<span class="w3-tag w3-xlarge"><a href="pizzait.html">It</a></span>
+    <span class="w3-tag w3-xlarge"><a href="pizzafn.html">Fn</a></span>
+	<span class="w3-tag w3-xlarge"><a href="pizzach.html">Ch</a></span>
+  </div>
+</header>
+
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">МЕНЮ</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Bliny');" id="myLink">
+        <div class="w3-col s3 tablink w3-padding-large w3-hover-red">Блины</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+        <div class="w3-col s3 tablink w3-padding-large w3-hover-red">Блинчики</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Topping');">
+        <div class="w3-col s3 tablink w3-padding-large w3-hover-red">Топпинги</div>
+      </a>
+	  <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+        <div class="w3-col s3 tablink w3-padding-large w3-hover-red">Напитки</div>
+      </a>
+    </div>
+
+    <div id="Bliny" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Блины с красной икрой и маслом</b> <span class="w3-right w3-tag w3-dark-grey w3-round">250.00 руб.</span></h1>
+      <p class="w3-text-grey" >Стопка из трех блинов обильно сдобренная растопленным сливочным маслом, сверху выложена икра</p>
+      <hr>
+   
+      <h1><b>Блины</b> <span class="w3-right w3-tag w3-dark-grey w3-round">90.00 руб.</span></h1>
+      <p class="w3-text-grey">Стопка из трех блинов сложенных конвертом</p>
+      <hr>
+      
+      <h1><b>Блины со сметаной</b> <span class="w3-right w3-tag w3-dark-grey w3-round">120.00 руб.</span></h1>
+      <p class="w3-text-grey">Стопка из трех блинов сложенных конвертом, свеху выложена сметана</p>
+      <hr>
+
+      <h1><b>Блины со сгущеным молоком</b> <span class="w3-right w3-tag w3-dark-grey w3-round">120.00 руб.</span></h1>
+      <p class="w3-text-grey">Стопка из трех блинов сложенных конвертом, сверху полита сгущеным молоком</p>
+      <hr>
+
+      <h1><b>Блины с джемом в ассортименте</b> <span class="w3-right w3-tag w3-dark-grey w3-round">130.00 руб.</span></h1>
+      <p class="w3-text-grey">Стопка из трех блинов сложенных конвертом, сверху джем</p>
+      <hr>
+
+      <h1><b>Блины с маслом</b><span class="w3-right w3-tag w3-dark-grey w3-round">140.00 руб.</span></h1>
+      <p class="w3-text-grey">Стопка из трех блинов сложенных конвертом, обильно политая топленым сливочным маслом</p>
+	  <hr>
+	  
+	  <h1><b>Блины с селедочным фаршем и маслом</b> <span class="w3-right w3-tag w3-dark-grey w3-round">160.00 руб.</span></h1>
+      <p class="w3-text-grey">Стопка из трех блинов сложенных конвертом, политая топленым сливочным маслом и сверху выложен селедочный фарш</p>
+      <hr>
+	  
+	  <h1><b>Блины медом</b> <span class="w3-right w3-tag w3-dark-grey w3-round">180.00 руб.</span></h1>
+      <p class="w3-text-grey">Стопка из трех блинов сложенных конвертом, сверху выложен мед</p>
+      <hr>
+    </div>
+
+    <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Блинчики с капустой</b> <span class="w3-right w3-tag w3-dark-grey w3-round">100.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные капустой обжаренные в масле</p>
+      <hr>
+   
+      <h1><b>Блинчики с пюре картофельным</b> <span class="w3-right w3-tag w3-dark-grey w3-round">100.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные картофельным пюре обжаренные в масле</p>
+      <hr>
+      
+      <h1><b>Блинчики с рисом и яйцом</b> <span class="w3-right w3-tag w3-dark-grey w3-round">100.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные рисом с яйцом обжаренные в масле</p>
+      <hr>
+
+      <h1><b>Блинчики с брынзой</b> <span class="w3-right w3-tag w3-dark-grey w3-round">130.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные брынзой обжаренные в масле</p>
+	  <hr>
+	  
+	  <h1><b>Блинчики с зелёным луком и яйцом</b> <span class="w3-right w3-tag w3-dark-grey w3-round">130.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные зелёным луком и яйцом обжаренные в масле</p>
+      <hr>
+   
+      <h1><b>Блинчики с творогом</b> <span class="w3-right w3-tag w3-dark-grey w3-round">130.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные творогом обжаренные в масле</p>
+      <hr>
+      
+      <h1><b>Блинчики с курагой</b> <span class="w3-right w3-tag w3-dark-grey w3-round">150.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные курагой обжаренные в масле</p>
+      <hr>
+
+      <h1><b>Блинчики с грибами</b> <span class="w3-right w3-tag w3-dark-grey w3-round">150.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные грибами обжаренные в масле</p>
+	  <hr>
+	  	  
+      <h1><b>Блинчики с фаршем куриным</b> <span class="w3-right w3-tag w3-dark-grey w3-round">160.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные куриным фаршем обжаренные в масле</p>
+      <hr>
+   
+      <h1><b>Блинчики с мясом</b> <span class="w3-right w3-tag w3-dark-grey w3-round">180.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные мясом (говядина) обжаренные в масле</p>
+      <hr>
+      
+      <h1><b>Блинчики с ветчиной и сыром</b> <span class="w3-right w3-tag w3-dark-grey w3-round">200.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные ветчиной и сыром обжаренные в масле</p>
+      <hr>
+
+      <h1><b>Блинчики с курой и грибами</b> <span class="w3-right w3-tag w3-dark-grey w3-round">200.00 руб.</span></h1>
+      <p class="w3-text-grey">Два блина фашированные курой и грибами обжаренные в масле</p>
+	  <hr>
+    </div>
+
+    <div id="Topping" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Селедочный фарш</b> <span class="w3-tag w3-grey w3-round">30 гр.</span><span class="w3-right w3-tag w3-dark-grey w3-round">80 руб.</span></h1>
+      <p class="w3-text-grey">Приготовленный по особому рецепту фарш из сельди</p>
+      <hr>
+
+      <h1><b>Сметана</b> <span class="w3-tag w3-grey w3-round">100 гр.</span><span class="w3-right w3-tag w3-dark-grey w3-round">80 руб.</span></h1>
+      <p class="w3-text-grey">Спросите у официанта</p>
+      <hr>
+
+	  
+      <h1><b>Масло</b> <span class="w3-tag w3-grey w3-round">10 гр.</span><span class="w3-right w3-tag w3-dark-grey w3-round">40 руб.</span></h1>
+      <p class="w3-text-grey">Топлёное сливочное масло</p>
+      <hr>
+      
+      <h1><b>Икра</b> <span class="w3-tag w3-grey w3-round">20 гр.</span><span class="w3-right w3-tag w3-dark-grey w3-round">150 руб.</span></h1>
+      <p class="w3-text-grey">Красная икра</p>
+      <hr>
+	  
+      <h1><b>Джем</b> <span class="w3-tag w3-grey w3-round">50 гр.</span><span class="w3-right w3-tag w3-dark-grey w3-round">50 руб.</span></h1>
+      <p class="w3-text-grey">Джем в ассортименте</p>
+      <hr>
+
+      <h1><b>Сгущеное молоко</b> <span class="w3-tag w3-grey w3-round">50 гр.</span><span class="w3-right w3-tag w3-dark-grey w3-round">50 руб.</span></h1>
+      <p class="w3-text-grey">Дополнительная порция сгущеного молока</p>
+      <hr>  
+	  
+      <h1><b>Мёд</b> <span class="w3-tag w3-grey w3-round">50 гр.</span><span class="w3-right w3-tag w3-dark-grey w3-round">100 руб.</span></h1>
+      <p class="w3-text-grey">спросите у официанта</p>
+    </div>
+	
+	<div id="Starter" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Чай "Greenfild" в ассортименте</b> <span class="w3-right w3-tag w3-dark-grey w3-round">50 руб.</span></h1>
+      <p class="w3-text-grey">Спросите у официанта</p>
+      <hr>
+   
+      <h1><b>Кофе чёрный заварной</b> <span class="w3-tag w3-grey w3-round">100 мл.</span><span class="w3-right w3-tag w3-dark-grey w3-round">150 руб.</span></h1>
+      <p class="w3-text-grey">Молотый кофе свареный в турке</p>
+      <hr>
+      
+      <h1><b>Соки "RICH" и "Добрый" <br>в ассортименте</b> <span class="w3-tag w3-grey w3-round">200 мл.</span><span class="w3-right w3-tag w3-dark-grey w3-round">50 руб.</span></h1>
+      <p class="w3-text-grey">Томатный, апельсин, яблоко, персик, вишня, грейпфрут</p>
+      <hr>
+      
+      <h1><b>Минеральная вода:</b> <span class="w3-right w3-tag w3-dark-grey w3-round">70 руб.</span></h1>
+      <p class="w3-text-grey">BonAqua (газированная / негаз.)</p>
+	  <hr>
+
+      <h1><b>Свежевыжатые соки</b> <span class="w3-tag w3-grey w3-round">200 мл.</span><span class="w3-right w3-tag w3-dark-grey w3-round">150 руб.</span></h1>
+      <ul class="w3-text-grey"><li>Апельсиновый</li><li>Яблочный</li><li>Морковный</li><li>Грейпфрутовый</li><li>Микс (яблоко, апельсин, сельдерей)</li></ul>
+    </div><br>
+		
+  </div>
+</div>
+
+<!-- About Container -->
+<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">О нас</h1>
+    <p>Наше кафе "Русские блины" открыло свои двери для посетителей 02 августа 1989 г. С тех пор утекло много воды. Менялись государственный строй, название улицы и правовая форма, но неизменным остается качество нашей продукции. Это достигается благодаря нашему замечательному коллективу и подтверждается постоянными посетителями кафе. Кафе предлагает блюда национальной кухни, а конкретнее блины и блинчики.</p>
+    <!-- <p><strong>The Chef?</strong> Mr. Italiano himself<img src="/w3images/chef.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+    <p></p> -->
+    <img src="cafe.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Cafe Russian pancakes">
+    <h1><b>График работы кафе</b></h1>
+    
+    <div class="w3-row">
+      <div class="w3-col s6">
+        <p>Понедельник 11.00 - 18.00</p>
+        <p>Вторник 11.00 - 18.00</p>
+        <p>Среда 11.00 - 18.00</p>
+      </div>
+      <div class="w3-col s6">
+        <p>Четверг 11.00 - 18.00</p>
+        <p>Пятница 11.00 - 18.00</p>
+        <p>Суббота и Воскресение выходной</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Contact (with google maps) -->
+<div id="googleMap" class="w3-grayscale-max" style="width:100%;height:600px;"></div>
+
+<div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">КОНТАКТЫ</h1>
+    <p>Вы можете найти нас по адресу: Санкт-Петербург, ул.Гагаринская д.13 или позвонить по телефону 8(812)5790559</p>
+    <p> Мы предлагаем нашу продукцию на вынос, а также заказ её по указанному телефону.</p>
+    <p class="w3-xxlarge"><strong>Закажите</strong> столик, узнайте о сегодняшнем меню или просто отправте сообщение:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-block" id="myBtn">SEND MESSAGE</button></p>
+    </form>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>ИЗВИНИТЕ</h2>
+    </div>
+    <div class="modal-body">
+      <p>Данный сервис пока недоступен</p>
+      <p>Вы можете связаться с нами по телефону: 8(812)579-05-59</p>
+    </div>
+    <div class="modal-footer">
+      <h3></h3>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+  <p>©</p>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(59.945832, 30.342446);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+document.getElementById("myLink").click();
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 6000); // Change image every 2 seconds
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAYnjUqgo_7DY3EHjgiCxtMmJgmNAAQAo&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
